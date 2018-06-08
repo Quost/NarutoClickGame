@@ -66,7 +66,7 @@
          });
       }
 
-      new Audio('./sound/shuriken' + randomNumber + '.ogg').play();
+      new Audio('./sound/shuriken' + randomNumber + '.mp3').play();
       app.boss.life -= app.shuriken.dmg;
       app.chakra.counter += app.shuriken.gainChakra;
       updateApp();
@@ -78,7 +78,7 @@
    app.rasengan.el.addEventListener('mousedown', function () {
       if (app.chakra.counter >= app.rasengan.chakra) {
          littleclimax();
-         new Audio('./sound/rasengan.ogg').play();
+         new Audio('./sound/rasengan.mp3').play();
          app.chakra.counter -= app.rasengan.chakra;
          app.boss.life -= app.rasengan.dmg;
          updateApp();
@@ -88,7 +88,7 @@
    app.rasenshuriken.el.addEventListener('mousedown', function () {
       if (app.chakra.counter >= app.rasenshuriken.chakra) {
          climax();
-         new Audio('./sound/rasenshuriken.ogg').play();
+         new Audio('./sound/rasenshuriken.mp3').play();
          app.chakra.counter -= app.rasenshuriken.chakra;
          app.boss.life -= app.rasenshuriken.dmg;
          updateApp();
@@ -98,7 +98,7 @@
    app.kagebunshin.button.addEventListener('mousedown', function () {
       if (app.chakra.counter >= app.kagebunshin.chakra) {
          littleclimax();
-         new Audio('./sound/kagebunshin.ogg').play();
+         new Audio('./sound/kagebunshin.mp3').play();
          app.chakra.counter -= app.kagebunshin.chakra;
          app.kagebunshin.counter += 1;
          app.kagebunshin.chakra += 2;
@@ -161,7 +161,7 @@
    }
 
    function semChakraSuficiente() {
-      new Audio('./sound/nochakra.ogg').play();
+      new Audio('./sound/nochakra.mp3').play();
       document.querySelectorAll(".message").forEach(e => e.parentNode.removeChild(e));
       let e = document.createElement('div');
       e.classList.add("message");
@@ -261,7 +261,7 @@
                if (app.levelTime.time < 10) {
                   if (!app.levelTime.el.classList.contains("text-danger"))
                      app.levelTime.el.classList.add("text-danger");
-                  new Audio('./sound/beep.ogg').play();
+                  new Audio('./sound/beep.mp3').play();
                } else {
                   if (app.levelTime.el.classList.contains("text-danger"))
                      app.levelTime.el.classList.remove("text-danger");
@@ -283,7 +283,7 @@
    }
 
    function startApp() {
-      new Audio('./sound/shinratensei.ogg').play();
+      new Audio('./sound/shinratensei.mp3').play();
       app.sound.bossmusic.play();
       app.gameContainers.welcome.classList.add("display-none");
       app.gameContainers.game.classList.remove("display-none");

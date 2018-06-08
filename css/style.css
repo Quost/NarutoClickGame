@@ -13,7 +13,6 @@ html {
    position: relative;
    background: no-repeat center center fixed;
    background-size: cover;
-   background-size: cover;
    font-family: 'Shojumaru', cursive;
    color: white;
    cursor: -webkit-grab !important;
@@ -43,6 +42,9 @@ body {
    font-family: 'Shojumaru', cursive;
    background: #6d47127a;
    transition: .2s;
+   -moz-transition: .2s;
+   -o-transition: .2s;
+   -ms-transition: .2s;
 }
 
 .btn-recomecar:hover {
@@ -74,10 +76,18 @@ body {
 
 .climax {
    animation: climax 1s linear forwards;
+   -webkit-animation: climax 1s linear forwards;
+   -moz-animation: climax 1s linear forwards;
+   -o-animation: climax 1s linear forwards;
+   -ms-animation: climax 1s linear forwards;
 }
 
 .littleclimax {
    animation: littleclimax 1s linear forwards;
+   -webkit-animation: littleclimax 1s linear forwards;
+   -moz-animation: littleclimax 1s linear forwards;
+   -o-animation: littleclimax 1s linear forwards;
+   -ms-animation: littleclimax 1s linear forwards;
 }
 
 .container {
@@ -105,9 +115,17 @@ body {
    height: 250px;
    width: 250px;
    transition: .1s;
+   -moz-transition: .1s;
+   -o-transition: .1s;
+   -ms-transition: .1s;
    background-image: url("../img/shuriken.svg");
    background-size: cover;
    animation: rotate 2s linear infinite;
+   -webkit-animation: rotate 2s linear infinite;
+   -moz-animation: rotate 2s linear infinite;
+   -o-animation: rotate 2s linear infinite;
+   -ms-animation: rotate 2s linear infinite;
+   
 }
 
 .game-ico {
@@ -123,6 +141,10 @@ body {
 
 .shake {
    animation: shake 0.1s;
+   -webkit-animation: shake 0.1s;
+   -moz-animation: shake 0.1s;
+   -o-animation: shake 0.1s;
+   -ms-animation: shake 0.1s;
 }
 
 .welcome {
@@ -143,6 +165,10 @@ body {
    color: white;
    opacity: 0;
    animation: up 2s;
+   -webkit-animation: up 2s;
+   -moz-animation: up 2s;
+   -o-animation: up 2s;
+   -ms-animation: up 2s;
 }
 
 .btn-kagebunshin,
@@ -182,6 +208,9 @@ body {
 
 .container-btn img.action-ico {
    transition: .2s;
+   -moz-transition: .2s;
+   -o-transition: .2s;
+   -ms-transition: .2s;
    width: 100%;
 }
 
@@ -214,7 +243,8 @@ body {
       width: 100%;
    }
    .container-info {
-      flex-direction: column;
+      flex-direction: row;
+      font-size: 13px;
    }
    .container-btns {
       font-size: 12px;
