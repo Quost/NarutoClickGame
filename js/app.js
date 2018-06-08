@@ -11,7 +11,16 @@
          bossmusic: document.querySelector("#bossmusic"),
          gameover: document.querySelector("#gameover"),
          finalbossmusic: document.querySelector("#finalbossmusic"),
-         victory: document.querySelector("#victorymusic")
+         victory: document.querySelector("#victorymusic"),
+         rasengan: document.querySelector("#rasengan"),
+         rasenshuriken: document.querySelector("#rasenshuriken"),
+         kagebunshin: document.querySelector("#kagebunshin"),
+         nochakra: document.querySelector("#nochakra"),
+         beep: document.querySelector("#beep"),
+         shinratensei: document.querySelector("#shinratensei"),
+         shuriken1: document.querySelector("#shuriken1"),
+         shuriken2: document.querySelector("#shuriken2"),
+         shuriken3: document.querySelector("#shuriken3")
       },
       intervalTimer: '',
       boss: {
@@ -59,14 +68,14 @@
    app.shuriken.el.addEventListener('mousedown', function () {
       let randomNumber = Math.floor(Math.random() * 3) + 1; // Random 1 - 3
 
-      if(randomNumber == 1){
+      if (randomNumber == 1) {
          app.gameContainers.main.classList.add("shake");
-         app.gameContainers.main.addEventListener("webkitAnimationEnd", function(){
+         app.gameContainers.main.addEventListener("webkitAnimationEnd", function () {
             app.gameContainers.main.classList.remove("shake");
          });
       }
+      app.sound['shuriken' + randomNumber].play();
 
-      new Audio('./sound/shuriken' + randomNumber + '.mp3').play();
       app.boss.life -= app.shuriken.dmg;
       app.chakra.counter += app.shuriken.gainChakra;
       updateApp();
@@ -78,7 +87,7 @@
    app.rasengan.el.addEventListener('mousedown', function () {
       if (app.chakra.counter >= app.rasengan.chakra) {
          littleclimax();
-         new Audio('./sound/rasengan.mp3').play();
+         app.sound.rasengan.play();
          app.chakra.counter -= app.rasengan.chakra;
          app.boss.life -= app.rasengan.dmg;
          updateApp();
@@ -88,7 +97,7 @@
    app.rasenshuriken.el.addEventListener('mousedown', function () {
       if (app.chakra.counter >= app.rasenshuriken.chakra) {
          climax();
-         new Audio('./sound/rasenshuriken.mp3').play();
+         app.sound.rasenshuriken.play();
          app.chakra.counter -= app.rasenshuriken.chakra;
          app.boss.life -= app.rasenshuriken.dmg;
          updateApp();
@@ -98,7 +107,7 @@
    app.kagebunshin.button.addEventListener('mousedown', function () {
       if (app.chakra.counter >= app.kagebunshin.chakra) {
          littleclimax();
-         new Audio('./sound/kagebunshin.mp3').play();
+         app.sound.kagebunshin.play();
          app.chakra.counter -= app.kagebunshin.chakra;
          app.kagebunshin.counter += 1;
          app.kagebunshin.chakra += 2;
@@ -161,7 +170,7 @@
    }
 
    function semChakraSuficiente() {
-      new Audio('./sound/nochakra.mp3').play();
+      app.sound.nochakra.play();
       document.querySelectorAll(".message").forEach(e => e.parentNode.removeChild(e));
       let e = document.createElement('div');
       e.classList.add("message");
@@ -214,7 +223,8 @@
             app.levelTime.time = 60;
             break;
          case 10:
-            document.querySelector("html").style.backgroundImage = "url(./img/finalboss.jpg)";
+            document.querySelector("html").classList.remove("bg-victory", "bg-principal", "bg-gameover");
+            document.querySelector("html").classList.add("bg-finalboss");
             app.sound.bossmusic.pause();
             app.sound.finalbossmusic.currentTime = 0;
             app.sound.finalbossmusic.play();
@@ -222,7 +232,8 @@
             app.levelTime.time = 180;
             break;
          default:
-            document.querySelector("html").style.backgroundImage = "url(./img/victory.jpg)";
+            document.querySelector("html").classList.remove("bg-finalboss", "bg-principal", "bg-gameover");
+            document.querySelector("html").classList.add("bg-victory");
             app.sound.finalbossmusic.pause();
             app.sound.victory.currentTime = 0;
             app.sound.victory.play();
@@ -237,7 +248,8 @@
    }
 
    function resetApp() {
-      document.querySelector("html").style.backgroundImage = "url(./img/bg.jpg)";
+      document.querySelector("html").classList.remove("bg-finalboss", "bg-victory", "bg-gameover");
+      document.querySelector("html").classList.add("bg-principal");
       app.boss.level = 1;
       app.sound.gameover.pause();
       app.sound.bossmusic.currentTime = 0;
@@ -261,7 +273,7 @@
                if (app.levelTime.time < 10) {
                   if (!app.levelTime.el.classList.contains("text-danger"))
                      app.levelTime.el.classList.add("text-danger");
-                  new Audio('./sound/beep.mp3').play();
+                  app.sound.beep.play();
                } else {
                   if (app.levelTime.el.classList.contains("text-danger"))
                      app.levelTime.el.classList.remove("text-danger");
@@ -283,7 +295,7 @@
    }
 
    function startApp() {
-      new Audio('./sound/shinratensei.mp3').play();
+      app.sound.shinratensei.play();
       app.sound.bossmusic.play();
       app.gameContainers.welcome.classList.add("display-none");
       app.gameContainers.game.classList.remove("display-none");
@@ -300,7 +312,8 @@
       app.sound.bossmusic.pause();
       app.sound.gameover.currentTime = 0;
       app.sound.gameover.play();
-      document.querySelector("html").style.backgroundImage = "url(./img/gameover.jpg)";
+      document.querySelector("html").classList.remove("bg-finalboss", "bg-victory", "bg-principal");
+      document.querySelector("html").classList.add("bg-gameover");
    }
 
    function winLevel() {

@@ -11,11 +11,28 @@ html {
    justify-content: center;
    align-items: center;
    position: relative;
+   background-color: #6d4711;
    background: no-repeat center center fixed;
    background-size: cover;
    font-family: 'Shojumaru', cursive;
    color: white;
    cursor: -webkit-grab !important;
+}
+
+html.bg-victory{
+   background-image: url("../img/victory.jpg");
+}
+
+html.bg-finalboss{
+   background-image: url("../img/finalboss.jpg");
+}
+
+html.bg-gameover{
+   background-image: url("../img/gameover.jpg");
+}
+
+html.bg-principal{
+   background-image: url("../img/bg.jpg");
 }
 
 body {

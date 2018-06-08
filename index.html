@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html style="background-image: url('img/bg.jpg')">
+<html class="bg-principal">
 
 <head>
    <title>Naruto Click Game</title>
@@ -19,6 +19,17 @@
    <audio id="gameover" src="sound/gameover.mp3" autostart="false"></audio>
    <audio id="finalbossmusic" src="sound/finalbossmusic.mp3" autostart="false"></audio>
    <audio id="victorymusic" src="sound/victorymusic.mp3" autostart="false"></audio>
+
+   <audio id="rasengan" src="sound/rasengan.mp3" autostart="false"></audio>
+   <audio id="rasenshuriken" src="sound/rasenshuriken.mp3" autostart="false"></audio>
+   <audio id="kagebunshin" src="sound/kagebunshin.mp3" autostart="false"></audio>
+   <audio id="nochakra" src="sound/nochakra.mp3" autostart="false"></audio>
+   <audio id="beep" src="sound/beep.mp3" autostart="false"></audio>
+   <audio id="shinratensei" src="sound/shinratensei.mp3" autostart="false"></audio>
+   <audio id="shuriken1" src="sound/shuriken1.mp3" autostart="false"></audio>
+   <audio id="shuriken2" src="sound/shuriken2.mp3" autostart="false"></audio>
+   <audio id="shuriken3" src="sound/shuriken3.mp3" autostart="false"></audio>
+
    <div id="climax"></div>
    <div id="littleclimax"></div>
    <div id="mainContainer" class="container">
@@ -37,7 +48,9 @@
       <div class="victory display-none">
          <h1>Você mostrou o seu lado verdadeiro estilo ninja, parabéns!</h1>
          <small style="margin-top:15px;">Feito por Vitor Takara</small>
-         <a target="_blank" href="https://github.com/VitorTakara/NarutoClickGame"><img style="width: 30px;background: white;border-radius: 50%;" src="./img/github.svg"></a>
+         <a target="_blank" href="https://github.com/VitorTakara/NarutoClickGame">
+            <img style="width: 30px;background: white;border-radius: 50%;" src="./img/github.svg">
+         </a>
       </div>
       <div class="game display-none">
          <div class="container-info">
@@ -105,7 +118,11 @@
          <small style="margin-top: 15px;float: right;color: #c7b176;">Feito por Vitor Takara</small>
       </div>
    </div>
-
+   <script>
+      document.documentElement.addEventListener('gesturestart', function (event) {
+         event.preventDefault();
+      }, false);
+   </script>
    <script src="https://unpkg.com/sweetalert2@7.22.0/dist/sweetalert2.all.js"></script>
    <script src="js/app.js"></script>
 </body>
