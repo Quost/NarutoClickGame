@@ -1,6 +1,7 @@
 ﻿const naruto_game = (function () {
    let app = {
       gameContainers: {
+         main: document.querySelector("#mainContainer"),
          welcome: document.querySelector(".welcome"),
          game: document.querySelector(".game"),
          gameover: document.querySelector(".gameover"),
@@ -57,6 +58,14 @@
 
    app.shuriken.el.addEventListener('mousedown', function () {
       let randomNumber = Math.floor(Math.random() * 3) + 1; // Random 1 - 3
+
+      if(randomNumber == 1){
+         app.gameContainers.main.classList.add("shake");
+         app.gameContainers.main.addEventListener("webkitAnimationEnd", function(){
+            app.gameContainers.main.classList.remove("shake");
+         });
+      }
+
       new Audio('./sound/shuriken' + randomNumber + '.ogg').play();
       app.boss.life -= app.shuriken.dmg;
       app.chakra.counter += app.shuriken.gainChakra;

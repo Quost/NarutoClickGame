@@ -23,9 +23,9 @@ body {
    text-shadow: 3px 2px 17px black;
 }
 
-.text-danger{
-	color: #ff7171;
-	font-size: 25px;
+.text-danger {
+   color: #ff7171;
+   font-size: 25px;
 }
 
 .swal2-popup .swal2-title,
@@ -62,7 +62,7 @@ body {
 
 .climax,
 .littleclimax {
-   position: absolute;
+   position: fixed;
    background: white;
    z-index: 2;
    top: 0;
@@ -119,6 +119,10 @@ body {
 .shuriken:active {
    height: 200px;
    width: 200px;
+}
+
+.shake {
+   animation: shake 0.1s;
 }
 
 .welcome {
@@ -202,4 +206,31 @@ body {
 .container-info-right {
    display: flex;
    flex-direction: column;
+}
+
+@media screen and (max-width: 600px) {
+   body,
+   .container {
+      width: 100%;
+   }
+   .container-info {
+      flex-direction: column;
+   }
+   .container-btns {
+      font-size: 12px;
+      font-weight: bold;
+      font-family: Segoe Ui, sans-serif;
+   }
+   .btn-kagebunshin img {
+      height: 53px;
+   }
+   .btn-kagebunshin,
+   .btn-rasengan,
+   .btn-rasenshuriken {
+      height: 80px;
+      width: 80px;
+   }
+   html {
+      height: auto;
+   }
 }
