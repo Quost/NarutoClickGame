@@ -1,13 +1,13 @@
 # Naruto Click Game
 
-Em um lindo dia resolvi fazer este joguinho arcade, foram no total 8 horas para ter este resultado :)
+Fiz este jogo arcade em **8 horas** utilizando:
 
-Foi usado HTML, CSS e JS.
+- HTML
+- CSS
+- JS
 
-Sem frameworks. Jogo rápido.
+Sem frameworks ou libs :)
 
-Talvez algum dia eu otimize este código ou adicione novas funcionalidades, fique a vontade para sugerir alterações e melhorias ;)
-
-Obrigado!!
+Have Fun!
 
 #By Vitor Takara
